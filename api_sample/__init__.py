@@ -1,6 +1,5 @@
 from logging.config import dictConfig
 from flask import Flask
-import os
 
 
 def create_app():
