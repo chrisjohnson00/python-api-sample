@@ -23,7 +23,9 @@ def create_app():
     app.secret_key = b'8kI*3Z8&8Ce3on@2u2V'
 
     from . import application
+    from . import probes
 
     app.register_blueprint(application.bp)
+    app.register_blueprint(probes.bp)
 
     return app
