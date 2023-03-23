@@ -9,13 +9,3 @@ bp = Blueprint('app', __name__, url_prefix='/api')
 def index():
     return jsonify([{'firstname': 'Sam', 'lastname': 'Ample', 'id': 12345},
                     {'firstname': 'Ample', 'lastname': 'Sam', 'id': 54321}])
-
-
-@bp.route('/ready')
-def health():
-    return jsonify(success=True)
-
-
-@bp.route('/liveness')
-def liveness():
-    return jsonify(success=True)
