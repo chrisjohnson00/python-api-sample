@@ -18,5 +18,6 @@ A sample Python API in Flask
 
 ```commandline
 export FLASK_APP=api_sample
+export POD_NAME=localhost
 flask --debug run
 ```
