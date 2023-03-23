@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.0.3](https://github.com/chrisjohnson00/python-api-sample/tree/v0.0.3) (2023-03-23)
+
+[Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.0.2...v0.0.3)
+
+**Merged pull requests:**
+
+- ci: rc based container tags, not branch name [\#3](https://github.com/chrisjohnson00/python-api-sample/pull/3) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.0.2](https://github.com/chrisjohnson00/python-api-sample/tree/v0.0.2) (2023-03-23)
 
 [Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.0.1...v0.0.2)
