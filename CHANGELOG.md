@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.0.2](https://github.com/chrisjohnson00/python-api-sample/tree/v0.0.2) (2023-03-23)
+
+[Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.0.1...v0.0.2)
+
+**Merged pull requests:**
+
+- refactor: drop the `users` grouping in the users api response [\#2](https://github.com/chrisjohnson00/python-api-sample/pull/2) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.0.1](https://github.com/chrisjohnson00/python-api-sample/tree/v0.0.1) (2023-03-23)
 
 [Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/ed1d1ffd0978e99f987f2b7b7496e3fe17b71a54...v0.0.1)
