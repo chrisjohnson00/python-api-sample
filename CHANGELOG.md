@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.0](https://github.com/chrisjohnson00/python-api-sample/tree/v0.1.0) (2023-03-24)
+
+[Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.0.3...v0.1.0)
+
+**Implemented enhancements:**
+
+- feat: adding comments endpoint [\#4](https://github.com/chrisjohnson00/python-api-sample/pull/4) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.0.3](https://github.com/chrisjohnson00/python-api-sample/tree/v0.0.3) (2023-03-23)
 
 [Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.0.2...v0.0.3)
