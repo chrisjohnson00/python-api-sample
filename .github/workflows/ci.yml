@@ -138,6 +138,21 @@ jobs:
       - name: Function Push
         run: |
           faas-cli push -f open-faas.yml --parallel 2 --tag=describe
+  faas-deploy:
+    name: 'Deploy OpenFaas Functions'
+    runs-on: openfaas
+    needs: ['faas']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install faas-cli
+        run: |
+          curl -sSL https://cli.openfaas.com | sh
+      - name: Function Deploy
+        run: |
+          ./faas-cli template pull
+          echo $GATEWAY_PASSWORD | ./faas-cli login -s --gateway http://gateway.openfaas:8080
+          ./faas-cli deploy -f open-faas.yml --tag=describe --gateway http://gateway.openfaas:8080
   actionslint:
     name: 'Actions Yaml Lint'
     runs-on: 'ubuntu-20.04'
