@@ -11,6 +11,7 @@ A sample Python API in Flask
 ## API Endpoints
 
   - `/api/v1/users` - Returns a list of users, hardcoded for sample purposes
+  - `/api/v1/comments` - Returns a list of comments, hardcoded for sample purposes
   - `/api/ready` - A K8s ready endpoint, returns 200 OK with a "success" body
   - `/api/liveness` - A K8s liveness endpoint, returns 200 OK with a "success" body
 
@@ -21,3 +22,10 @@ export FLASK_APP=api_sample
 export POD_NAME=localhost
 flask --debug run
 ```
+
+## OpenFaas
+
+The two API endpoints are also implemented as OpenFaas functions, controlled via `open-faas.yml` and found in `users` 
+and `comments` directories.
+
+Checkout the additonal job in the `ci.yml` workflow for how it is used.
