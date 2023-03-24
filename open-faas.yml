@@ -1,0 +1,13 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  users:
+    lang: python
+    handler: ./users
+    image: chrisjohnson00/python-api-sample:${USERS_TAG:-openfaas-users}
+  comments:
+    lang: python
+    handler: ./comments
+    image: chrisjohnson00/python-api-sample:${COMMENTS_TAG:-openfaas-comments}
