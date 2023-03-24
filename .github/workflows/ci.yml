@@ -137,7 +137,7 @@ jobs:
           password: '${{ secrets.DOCKER_HUB_PASSWORD }}'
       - name: Function Push
         run: |
-          faas-cli push -f open-faas.yml --parallel 2
+          faas-cli push -f open-faas.yml --parallel 2 --tag=describe
   actionslint:
     name: 'Actions Yaml Lint'
     runs-on: 'ubuntu-20.04'
