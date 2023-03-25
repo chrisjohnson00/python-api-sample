@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.2.0](https://github.com/chrisjohnson00/python-api-sample/tree/v0.2.0) (2023-03-25)
+
+[Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.1.0...v0.2.0)
+
+**Implemented enhancements:**
+
+- feat: deploy as openfaas functions [\#5](https://github.com/chrisjohnson00/python-api-sample/pull/5) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.1.0](https://github.com/chrisjohnson00/python-api-sample/tree/v0.1.0) (2023-03-24)
 
 [Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.0.3...v0.1.0)
