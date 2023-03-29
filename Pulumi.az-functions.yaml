@@ -1,0 +1,6 @@
+config:
+  azure-native:location: EastUS
+  python-api-sample:appPath: ./az-function
+  python-api-sample:errorDocument: error.html
+  python-api-sample:indexDocument: index.html
+  python-api-sample:sitePath: ./www

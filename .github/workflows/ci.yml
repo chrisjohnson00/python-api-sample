@@ -167,3 +167,31 @@ jobs:
           yamllint_config_datapath: '{"extends":"default","rules":{"line-length":{"max":360,"level":"warning"},"truthy":{"check-keys":false},"document-start":{"present":false}}}'
         env:
           GITHUB_ACCESS_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+  azure-deploy:
+    name: 'Deploy To Azure'
+    runs-on: ubuntu-20.04
+    needs: ['lint', 'test']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+          cache: pip
+      - name: Installing PyPi dependencies for Pulumi
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -r pulumi_requirements.txt
+      - name: Install Pulumi
+        uses: pulumi/actions@v4
+      - name: Pulumi Up
+        run: |
+          pulumi up -y --stack ${{ github.repository }}/az-functions
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+          ARM_CLIENT_ID: ${{ vars.ARM_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+          ARM_TENANT_ID: ${{ vars.ARM_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ vars.ARM_SUBSCRIPTION_ID }}

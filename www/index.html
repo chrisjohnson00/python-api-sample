@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <script>
+        var config = {};
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const response = await fetch("config.json");
+            config = await response.json();
+        });
+
+        async function getTheUsers() {
+            const response = await fetch(`${config.api}/users`);
+            const data = await response.json();
+
+            const table = document.createElement('table');
+
+            // Create table header
+            const headerRow = table.insertRow();
+            const headerNames = ['First Name', 'Last Name', 'ID'];
+            headerNames.forEach(name => {
+              const headerCell = document.createElement('th');
+              headerCell.textContent = name;
+              headerRow.appendChild(headerCell);
+            });
+
+            // Create table rows
+            data.forEach(person => {
+              const row = table.insertRow();
+              const cells = [person.firstname, person.lastname, person.id];
+              cells.forEach(cellValue => {
+                const cell = row.insertCell();
+                cell.textContent = cellValue;
+              });
+            });
+
+            document.querySelector("#content").appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    <h1>Users</h1>
+    <p>
+        <button onclick="getTheUsers()">Get Users!!</button>
+        <span id="content"></span>
+    </p>
+</body>
+</html>
