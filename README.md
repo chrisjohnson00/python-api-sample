@@ -8,6 +8,13 @@ A sample Python API in Flask
     pip install --upgrade Flask gunicorn
     pip freeze > requirements.txt
 
+## PyPi Dependencies for Deploy (Pulumi Only)
+
+    docker run -it --rm -v ${PWD}:/repo -w /repo python:3.11.2-slim bash
+    pip install --upgrade pip
+    pip install --upgrade "pulumi>=3.0.0,<4.0.0" "pulumi-azure-native>=1.0.0,<2.0.0"
+    pip freeze > pulumi_requirements.txt
+
 ## API Endpoints
 
   - `/api/v1/users` - Returns a list of users, hardcoded for sample purposes
