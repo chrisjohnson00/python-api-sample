@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.3.0](https://github.com/chrisjohnson00/python-api-sample/tree/v0.3.0) (2023-03-30)
+
+[Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.2.0...v0.3.0)
+
+**Implemented enhancements:**
+
+- feat: deploy to azure via pulumi [\#6](https://github.com/chrisjohnson00/python-api-sample/pull/6) ([chrisjohnson00](https://github.com/chrisjohnson00))
+
 ## [v0.2.0](https://github.com/chrisjohnson00/python-api-sample/tree/v0.2.0) (2023-03-25)
 
 [Full Changelog](https://github.com/chrisjohnson00/python-api-sample/compare/v0.1.0...v0.2.0)
