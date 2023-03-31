@@ -5,7 +5,7 @@ grpcio==1.51.3
 parver==0.4
 protobuf==4.22.1
 pulumi==3.60.0
-pulumi-azure-native==1.98.1
+pulumi-azure-native==1.99.0
 PyYAML==6.0
 semver==2.13.0
 six==1.16.0
