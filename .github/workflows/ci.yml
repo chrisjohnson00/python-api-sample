@@ -189,6 +189,7 @@ jobs:
         uses: pulumi/actions@v4
       - name: Pulumi Up
         run: |
+          source venv/bin/activate
           echo "VIRTUAL ENV:" $VIRTUAL_ENV
           pulumi up -y --stack ${{ github.repository }}/az-functions
         env:
