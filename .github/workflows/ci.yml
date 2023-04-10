@@ -191,7 +191,7 @@ jobs:
         run: |
           source venv/bin/activate
           echo "VIRTUAL ENV:" $VIRTUAL_ENV
-#          pulumi up -y --stack ${{ github.repository }}/az-functions
+          pulumi up -y --stack ${{ github.repository }}/az-functions
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
           ARM_CLIENT_ID: ${{ vars.ARM_CLIENT_ID }}
