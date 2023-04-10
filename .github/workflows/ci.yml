@@ -184,10 +184,12 @@ jobs:
           python3 -m venv venv
           source venv/bin/activate
           pip install -r pulumi_requirements.txt
+          echo "VIRTUAL ENV:" $VIRTUAL_ENV
       - name: Install Pulumi
         uses: pulumi/actions@v4
       - name: Pulumi Up
         run: |
+          echo "VIRTUAL ENV:" $VIRTUAL_ENV
           pulumi up -y --stack ${{ github.repository }}/az-functions
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
