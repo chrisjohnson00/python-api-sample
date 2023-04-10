@@ -178,7 +178,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Pulumi Up
         run: |
-          source venv/bin/activate
+          source /usr/src/app/venv/bin/activate
           echo "VIRTUAL ENV:" $VIRTUAL_ENV
           pulumi up -y --stack ${{ github.repository }}/az-functions
         env:
