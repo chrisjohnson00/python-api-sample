@@ -177,6 +177,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Pulumi Up
+        shell: bash
         run: |
           source /usr/src/app/venv/bin/activate
           echo "VIRTUAL ENV:" $VIRTUAL_ENV
