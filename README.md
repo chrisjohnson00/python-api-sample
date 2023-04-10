@@ -12,7 +12,7 @@ A sample Python API in Flask
 
     docker run -it --rm -v ${PWD}:/repo -w /repo python:3.11.2-slim bash
     pip install --upgrade pip
-    pip install --upgrade "pulumi>=3.0.0,<4.0.0" "pulumi-azure-native>=1.0.0,<2.0.0"
+    pip install --upgrade "pulumi>=3.0.0,<4.0.0" "pulumi-azure-native>=1.0.0,<2.0.0" pulumi_synced_folder
     pip freeze > pulumi_requirements.txt
 
 ## API Endpoints
