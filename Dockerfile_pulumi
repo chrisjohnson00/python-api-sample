@@ -1,15 +1,30 @@
-FROM python:3.11-slim
-SHELL ["/bin/bash", "-c"]
+# a build stage to get pulumi
+FROM python:3.11-slim as getpulumi
 
-RUN apt-get update && apt-get install -y curl python3-venv git && \
+RUN apt-get update && apt-get install -y curl && \
     curl -fsSL https://get.pulumi.com | sh
 
-ENV PATH="$PATH:/root/.pulumi/bin"
+# a build stage to get pypi dependencies
+FROM python:3.11-slim as pypi
 
-WORKDIR /usr/src/app
+ENV VIRTUAL_ENV=/opt/venv
+RUN python -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY pulumi_requirements.txt .
-
-RUN python -m venv venv
-RUN source venv/bin/activate && pip install --upgrade pip && \
+RUN pip install --upgrade pip && \
     pip install -r pulumi_requirements.txt
+
+# the final build stage which copies pulumi and pypi dependencies into the final container
+FROM python:3.11-slim
+
+RUN mkdir -p /root/.pulumi/bin
+
+COPY --from=getpulumi /root/.pulumi/bin/* /root/.pulumi/bin/.
+
+ENV PATH="$PATH:/root/.pulumi/bin"
+ENV VIRTUAL_ENV=/opt/venv
+
+COPY --from=pypi /opt/venv /opt/venv
+
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
