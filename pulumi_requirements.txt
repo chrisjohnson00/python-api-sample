@@ -5,6 +5,7 @@ grpcio==1.51.3
 parver==0.4
 protobuf==4.22.1
 pulumi==3.62.0
+pulumi-azure==5.39.0
 pulumi-azure-native==1.99.1
 pulumi-synced-folder==0.10.2
 PyYAML==6.0
