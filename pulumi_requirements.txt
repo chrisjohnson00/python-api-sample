@@ -1,7 +1,7 @@
 Arpeggio==2.0.0
 attrs==22.2.0
 dill==0.3.6
-grpcio==1.51.3
+grpcio==1.54.2
 parver==0.4
 protobuf==4.22.1
 pulumi==3.60.0
